@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/common_padding"
+    tools:context=".presentation.game.GameActivity">
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/start_game"
+        app:layout_constraintEnd_toStartOf="@+id/start_history"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/start_history"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/start_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/first_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_marginVertical="@dimen/divider_margin"
+        android:background="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_button" />
+
+    <TextView
+        android:id="@+id/deck_size_tv"
+        android:layout_width="@dimen/card_view_size_two"
+        android:layout_height="@dimen/card_view_size_one"
+        android:layout_margin="@dimen/number_view_margin"
+        android:background="@drawable/bg_card_closed"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_divider"
+        tools:text="1" />
+
+    <View
+        android:id="@+id/second_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_marginVertical="@dimen/divider_margin"
+        android:background="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deck_size_tv" />
+
+    <TextView
+        android:id="@+id/suit_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:gravity="center"
+        android:text="@string/suit_priority"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_divider" />
+
+    <TextView
+        android:id="@+id/suit_priority_first_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/suit_priority_first"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_first"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suit_priority" />
+
+    <ImageView
+        android:id="@+id/suit_priority_first"
+        android:layout_width="@dimen/suit_view_size"
+        android:layout_height="@dimen/suit_view_size"
+        android:layout_margin="@dimen/number_view_margin"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_second_tv"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_first_tv"
+        app:layout_constraintTop_toTopOf="@+id/suit_priority_first_tv" />
+
+    <TextView
+        android:id="@+id/suit_priority_second_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/suit_priority_second"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_second"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_first"
+        app:layout_constraintTop_toBottomOf="@+id/suit_priority" />
+
+    <ImageView
+        android:id="@+id/suit_priority_second"
+        android:layout_width="@dimen/suit_view_size"
+        android:layout_height="@dimen/suit_view_size"
+        android:layout_margin="@dimen/number_view_margin"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_third_tv"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_second_tv"
+        app:layout_constraintTop_toTopOf="@+id/suit_priority_second_tv" />
+
+    <TextView
+        android:id="@+id/suit_priority_third_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/suit_priority_third"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_third"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_second"
+        app:layout_constraintTop_toBottomOf="@+id/suit_priority" />
+
+    <ImageView
+        android:id="@+id/suit_priority_third"
+        android:layout_width="@dimen/suit_view_size"
+        android:layout_height="@dimen/suit_view_size"
+        android:layout_margin="@dimen/number_view_margin"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_forth_tv"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_third_tv"
+        app:layout_constraintTop_toTopOf="@+id/suit_priority_third_tv" />
+
+    <TextView
+        android:id="@+id/suit_priority_forth_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/suit_priority_forth"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/suit_priority_forth"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_third"
+        app:layout_constraintTop_toBottomOf="@+id/suit_priority" />
+
+    <ImageView
+        android:id="@+id/suit_priority_forth"
+        android:layout_width="@dimen/suit_view_size"
+        android:layout_height="@dimen/suit_view_size"
+        android:layout_margin="@dimen/number_view_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/suit_priority_forth_tv"
+        app:layout_constraintTop_toTopOf="@+id/suit_priority_forth_tv" />
+
+    <View
+        android:id="@+id/third_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_marginVertical="@dimen/divider_margin"
+        android:background="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suit_priority_first" />
+
+    <TextView
+        android:id="@+id/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/name_margin"
+        android:text="@string/android"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/third_divider" />
+
+    <TextView
+        android:id="@+id/android_game_deck_size"
+        android:layout_width="@dimen/card_view_size_two"
+        android:layout_height="@dimen/card_view_size_one"
+        android:layout_margin="@dimen/number_view_margin"
+        android:background="@drawable/bg_card_closed"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/android_result_deck_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/android"
+        tools:text="1" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/android_open_card_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="android_open_card_rang,android_open_card_suit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/android_open_card_rang"
+        android:layout_width="@dimen/rang_view_size"
+        android:layout_height="@dimen/rang_view_size"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/android_game_deck_size"
+        app:layout_constraintEnd_toStartOf="@+id/android_open_card_suit"
+        app:layout_constraintStart_toStartOf="@+id/android_game_deck_size"
+        app:layout_constraintTop_toTopOf="@+id/android_game_deck_size" />
+
+    <ImageView
+        android:id="@+id/android_open_card_suit"
+        android:layout_width="@dimen/rang_view_size"
+        android:layout_height="@dimen/rang_view_size"
+        app:layout_constraintBottom_toBottomOf="@+id/android_game_deck_size"
+        app:layout_constraintEnd_toEndOf="@+id/android_game_deck_size"
+        app:layout_constraintStart_toEndOf="@+id/android_open_card_rang"
+        app:layout_constraintTop_toTopOf="@+id/android_game_deck_size" />
+
+
+    <TextView
+        android:id="@+id/android_result_deck_size"
+        android:layout_width="@dimen/card_view_size_two"
+        android:layout_height="@dimen/card_view_size_one"
+        android:layout_margin="@dimen/number_view_margin"
+        android:background="@drawable/bg_card_closed"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/android_game_deck_size"
+        app:layout_constraintTop_toBottomOf="@+id/android"
+        tools:text="1" />
+
+
+    <TextView
+        android:id="@+id/game_deck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/game_deck"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/result_deck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/android_result_deck_size" />
+
+    <TextView
+        android:id="@+id/result_deck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/result_deck"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/game_deck"
+        app:layout_constraintTop_toBottomOf="@+id/android_result_deck_size" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/player_open_card_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="player_open_card_rang,player_open_card_suit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/player_game_deck_size"
+        android:layout_width="@dimen/card_view_size_two"
+        android:layout_height="@dimen/card_view_size_one"
+        android:layout_margin="@dimen/number_view_margin"
+        android:background="@drawable/bg_card_closed"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/player_result_deck_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_deck"
+        tools:text="1" />
+
+
+    <TextView
+        android:id="@+id/player_open_card_rang"
+        android:layout_width="@dimen/rang_view_size"
+        android:layout_height="@dimen/rang_view_size"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/player_game_deck_size"
+        app:layout_constraintEnd_toStartOf="@+id/player_open_card_suit"
+        app:layout_constraintStart_toStartOf="@+id/player_game_deck_size"
+        app:layout_constraintTop_toTopOf="@+id/player_game_deck_size" />
+
+    <ImageView
+        android:id="@+id/player_open_card_suit"
+        android:layout_width="@dimen/rang_view_size"
+        android:layout_height="@dimen/rang_view_size"
+        app:layout_constraintBottom_toBottomOf="@+id/player_game_deck_size"
+        app:layout_constraintEnd_toEndOf="@+id/player_game_deck_size"
+        app:layout_constraintStart_toEndOf="@+id/player_open_card_rang"
+        app:layout_constraintTop_toTopOf="@+id/player_game_deck_size" />
+
+
+    <TextView
+        android:id="@+id/player_result_deck_size"
+        android:layout_width="@dimen/card_view_size_two"
+        android:layout_height="@dimen/card_view_size_one"
+        android:layout_margin="@dimen/number_view_margin"
+        android:background="@drawable/bg_card_closed"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_game_deck_size"
+        app:layout_constraintTop_toBottomOf="@+id/result_deck"
+        tools:text="1" />
+
+
+    <TextView
+        android:id="@+id/player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:text="@string/player"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_game_deck_size" />
+
+    <Button
+        android:id="@+id/open_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/number_view_margin"
+        android:enabled="false"
+        android:text="@string/open_card"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player"
+        app:layout_constraintVertical_bias="1" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

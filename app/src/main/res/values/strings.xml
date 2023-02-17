@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TestCardGameApplication</string>
+    <string name="progress_suit_priority_selection">suit priority selected</string>
+    <string name="progress_deck_cards_opening">deck cards opened</string>
+    <string name="progress_deck_cards_shuffling">deck cards shuffled</string>
+    <string name="error_message">something went wrong, try again please</string>
+    <string name="start_game">new game</string>
+    <string name="history">history</string>
+    <string name="suit_priority">suit priority</string>
+    <string name="suit_priority_first">1</string>
+    <string name="suit_priority_second">2</string>
+    <string name="suit_priority_third">3</string>
+    <string name="suit_priority_forth">4</string>
+    <string name="player">player</string>
+    <string name="android">android</string>
+    <string name="game_deck">game deck</string>
+    <string name="result_deck">result deck</string>
+    <string name="open_card">next</string>
+    <string name="dialog_new_game_title">New game start</string>
+    <string name="dialog_new_game_msg">Do you want to start new game?</string>
+    <string name="dialog_new_game_positive_btn_title">YES</string>
+    <string name="dialog_new_game_cancel_btn_title">NO</string>
+</resources>

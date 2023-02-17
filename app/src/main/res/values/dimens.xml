@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding">8dp</dimen>
+    <dimen name="common_margin">8dp</dimen>
+    <dimen name="divider">4dp</dimen>
+    <dimen name="divider_margin">2dp</dimen>
+    <dimen name="number_view_size">36dp</dimen>
+    <dimen name="number_view_margin">8dp</dimen>
+    <dimen name="card_view_margin">4dp</dimen>
+    <dimen name="button_width">72dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_margin">10dp</dimen>
+    <dimen name="rang_view_size">36dp</dimen>
+    <dimen name="suit_view_size">48dp</dimen>
+    <dimen name="card_view_size_one">62dp</dimen>
+    <dimen name="card_view_size_two">96dp</dimen>
+    <dimen name="name_margin">16dp</dimen>
+    <dimen name="view_margin">12dp</dimen>
+</resources>
