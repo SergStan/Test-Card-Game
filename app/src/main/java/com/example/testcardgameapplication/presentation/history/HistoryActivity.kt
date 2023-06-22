@@ -5,10 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.testcardgameapplication.R
 import com.example.testcardgameapplication.databinding.ActivityHistoryBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -56,6 +59,19 @@ class HistoryActivity : AppCompatActivity() {
             }
         }
         historyViewModel.loadHistory()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.history_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_clear_history -> historyViewModel.clearHistory()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

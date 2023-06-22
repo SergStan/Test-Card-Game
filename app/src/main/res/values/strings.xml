@@ -20,4 +20,5 @@
     <string name="dialog_new_game_msg">Do you want to start new game?</string>
     <string name="dialog_new_game_positive_btn_title">YES</string>
     <string name="dialog_new_game_cancel_btn_title">NO</string>
+    <string name="clear_all">clear all</string>
 </resources>

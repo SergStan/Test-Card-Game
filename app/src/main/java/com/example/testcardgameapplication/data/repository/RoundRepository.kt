@@ -8,4 +8,5 @@ interface RoundRepository {
    suspend fun getAllGameRounds(id: Long): RoundsResult
    suspend fun insertRound(round:Round): Boolean
    suspend fun deleteGameRounds(id: Long): Boolean
+   suspend fun deleteAllRounds(): Boolean
 }

@@ -29,7 +29,7 @@ class GameViewModel(
         viewModelScope.launch(mainCoroutineDispatcher) {
             val job = launch(ioCoroutineDispatcher) {
                 game?.let {
-                    if (it.deckHasCards) {
+                    if (it.playersHaveCards) {
                         repository.deleteGameRounds(it.id)
                     }
                 }

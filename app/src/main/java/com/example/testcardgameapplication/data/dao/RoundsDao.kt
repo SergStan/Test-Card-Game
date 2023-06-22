@@ -19,7 +19,8 @@ interface RoundsDao {
     fun insert(round: Round)
 
     @Query("DELETE FROM round WHERE game = :id")
-    fun delete(id: Long): Int
+    fun delete(id: Long)
 
-
+    @Query("DELETE FROM round")
+    fun deleteAll()
 }

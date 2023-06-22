@@ -38,7 +38,20 @@ class GameRepository(
     }
 
     override suspend fun deleteGameRounds(id: Long): Boolean {
-        roundsDao.delete(id)
-        return true
+        return try {
+            roundsDao.delete(id)
+            true
+        } catch (ex: Exception) {
+            false
+        }
+    }
+
+    override suspend fun deleteAllRounds(): Boolean {
+        return try {
+            roundsDao.deleteAll()
+            true
+        } catch (ex: Exception) {
+            false
+        }
     }
 }

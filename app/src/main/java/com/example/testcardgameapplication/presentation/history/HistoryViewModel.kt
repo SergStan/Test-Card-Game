@@ -2,6 +2,7 @@ package com.example.testcardgameapplication.presentation.history
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,6 +14,7 @@ import com.example.testcardgameapplication.data.model.Round
 import com.example.testcardgameapplication.data.repository.RoundRepository
 import com.example.testcardgameapplication.data.model.RoundsResult
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
@@ -37,6 +39,7 @@ class HistoryViewModel(
                     val groupedMapMap: Map<String, List<Round>> = result.rounds.groupBy {
                         it.game.toString()
                     }
+                    Log.d("TAAAG", "repository.getAllRounds() ${groupedMapMap.size}")
                     val consolidatedList = mutableListOf<ListItem>()
                     for (game: String in groupedMapMap.keys) {
                         val groupItems: List<Round> = groupedMapMap[game]!!
@@ -50,12 +53,14 @@ class HistoryViewModel(
                     }
                     HistoryState.Content(consolidatedList)
                 }
+
                 is RoundsResult.Error -> {
                     HistoryState.Error(result.throwable)
                 }
             }
         }
     }
+
     @SuppressLint("SimpleDateFormat")
     private fun prepareHeaderState(list: List<Round>): ListItem {
         fun getDateTime(timestamp: Long): String? {
@@ -82,6 +87,19 @@ class HistoryViewModel(
             else -> DRAW
         }
         return HeaderState(name, score, winner)
+    }
+
+    fun clearHistory() {
+        viewModelScope.launch(mainCoroutineDispatcher) {
+            val def = async(ioCoroutineDispatcher) {
+                repository.deleteAllRounds()
+            }
+            if (def.await()) {
+                loadHistory()
+            } else {
+                Log.d("TAAAG", "history was not deleted")
+            }
+        }
     }
 
     companion object {
